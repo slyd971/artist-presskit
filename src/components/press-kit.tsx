@@ -239,12 +239,14 @@ export const artistData = {
   } satisfies ArtistContact,
 };
 
+const smoothEase = [0.22, 1, 0.36, 1] as const;
+
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.7, ease: smoothEase },
   },
 };
 
@@ -383,7 +385,7 @@ export function AboutSection() {
           className="relative min-h-[28rem] overflow-hidden rounded-[2rem]"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, ease: smoothEase }}
           viewport={{ once: true, amount: 0.25 }}
         >
           <Image
@@ -516,7 +518,7 @@ export function VideoSection() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.75, ease: smoothEase }}
             className="theme-panel group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]"
           >
             <div className="relative h-[20rem] overflow-hidden sm:h-[24rem] lg:h-[26rem]">
@@ -546,7 +548,7 @@ export function VideoSection() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.65, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.65, delay: 0.08, ease: smoothEase }}
             className="theme-panel group grid h-[20rem] grid-rows-[minmax(0,1fr)_auto] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] sm:h-[24rem] lg:h-[26rem]"
           >
             <div className="relative min-h-0 overflow-hidden">
@@ -593,7 +595,7 @@ export function SpotifySection() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.75, ease: smoothEase }}
       >
         <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="theme-panel-subtle relative flex flex-col justify-between border-b border-white/10 bg-[linear-gradient(180deg,rgba(15,12,11,0.5),rgba(15,12,11,0.18))] p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-8">
@@ -722,7 +724,7 @@ export function LiveSection() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
-        transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.75, ease: smoothEase }}
       >
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),transparent_38%,rgba(0,0,0,0.04))]" />
         <div className="relative z-10">
@@ -787,7 +789,7 @@ export function SocialWallSection() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.75, ease: smoothEase }}
             className="group relative min-h-[34rem] overflow-hidden rounded-[2rem]"
           >
             <Image
@@ -821,7 +823,7 @@ export function SocialWallSection() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.65, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.65, delay: index * 0.08, ease: smoothEase }}
                 className="theme-panel group relative min-h-[16rem] overflow-hidden rounded-[2rem] border border-white/10"
               >
                 <Image
@@ -867,7 +869,7 @@ export function GallerySection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, ease: smoothEase }}
           >
             <Link
               href="/gallery"
@@ -927,7 +929,7 @@ export function ContactSection() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, ease: smoothEase }}
         >
           <p className="text-[0.72rem] uppercase tracking-[0.45em] text-white">Contact / Final CTA</p>
           <h2 className="mt-5 max-w-xl text-4xl font-black tracking-[-0.06em] text-white sm:text-5xl lg:text-7xl">
@@ -945,7 +947,7 @@ export function ContactSection() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, delay: 0.08, ease: smoothEase }}
           className="theme-panel rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 sm:p-8"
         >
           <div className="grid gap-4 sm:grid-cols-2">
